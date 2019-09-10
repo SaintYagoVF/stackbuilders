@@ -5,6 +5,8 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap-datepicker.min.css">
+       
+
         <title>Pico y Placa</title>
 </head>
 <body>
@@ -26,7 +28,13 @@
     <label for="datepicker-inline">DATE</label>
     <div id="datepicker-inline"></div>
 
-
+    <br>
+    <label for="time_picker">TIME</label>
+    <br>
+    <br>
+    <input type="time" id="time_picker" name="time_picker">
+    <br>
+    <br>
       <br>
       <button type="button" onclick="predictMethod()">PREDICT</button>
                                    
@@ -37,19 +45,17 @@
 <script src="js/index.js"></script>
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap-datepicker.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
 var today = new Date();
 var dayPicked;
 jQuery('#datepicker-inline').datepicker({
     todayHighlight: true,
-    startDate: today,
-    format: 'dd/mm/yyyy'
+    startDate: today
 });
 $('#datepicker-inline').on('changeDate', function () {
 
     dayPicked = $('#datepicker-inline').datepicker('getFormattedDate')
-
-console.log(dayPicked) ;
 
 
 });
