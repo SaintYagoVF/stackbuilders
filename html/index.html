@@ -3,32 +3,56 @@
 
 <head>
         <meta charset="utf-8">
-        <!--CSS -->
         <link rel="stylesheet" href="css/style.css">
-        <title>Pico y Placa Predictor</title>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-datepicker.min.css">
+        <title>Pico y Placa</title>
 </head>
 <body>
 
-    <h1>Pico y Placa Predictor</h1>
+<h1>Pico y Placa Predictor</h1>
 
 
-   
 <div >
     
-    <label for="plateName">PLATE</label>
-    <input type="text" id="plateName" name="plateName" maxlength="3" placeholder="PBC">
+      <label for="plateName">PLATE</label>
+      <input type="text" id="plateName" name="plateName" maxlength="3" placeholder="PBC">
 
-    <input type="number" id="plateNumber" name="plateNumber" min="0" max="9999" placeholder="1234" >
-
+      <input type="number" id="plateNumber" name="plateNumber" min="0" max="9999" placeholder="1234" >
+  
     <br>
-    <button type="button" onclick="predictMethod()">PREDICT</button>
-                                 
-   
-</div>
+    <br>
+    <br>
+    <br>
+    <label for="datepicker-inline">DATE</label>
+    <div id="datepicker-inline"></div>
 
 
+      <br>
+      <button type="button" onclick="predictMethod()">PREDICT</button>
+                                   
+     
+  </div>
 
 <!--JavaScript -->
 <script src="js/index.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap-datepicker.min.js"></script>
+<script>
+var today = new Date();
+var dayPicked;
+jQuery('#datepicker-inline').datepicker({
+    todayHighlight: true,
+    startDate: today,
+    format: 'dd/mm/yyyy'
+});
+$('#datepicker-inline').on('changeDate', function () {
+
+    dayPicked = $('#datepicker-inline').datepicker('getFormattedDate')
+
+console.log(dayPicked) ;
+
+
+});
+</script>
 </body>
 </html>
