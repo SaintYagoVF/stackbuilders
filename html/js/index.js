@@ -7,15 +7,64 @@ function predictMethod() {
     console.log(dayWeek.getDay());
     console.log(platePicked);
 
+    var lastChar = platePicked[platePicked.length -1];
     switch(dayWeek.getDay()) {
         case 1:
+            if(lastChar=='1' || lastChar=='2'){
+                if((timePicked<"09:30" && timePicked>="07:00") || (timePicked<"19:30" && timePicked>="16:00") )
+                    createSwalNo();
+                else
+                createSwalYes();
+            }
+        else
         createSwalYes();
           break;
         case 2:
+                if(lastChar=='3' || lastChar=='4'){
+                    if((timePicked<"09:30" && timePicked>="07:00") || (timePicked<"19:30" && timePicked>="16:00") )
+                        createSwalNo();
+                    else
+                    createSwalYes();
+                }
+            else
             createSwalYes();
+              break;
+          break;
+          case 3:
+                if(lastChar=='5' || lastChar=='6'){
+                    if((timePicked<"09:30" && timePicked>="07:00") || (timePicked<"19:30" && timePicked>="16:00") )
+                        createSwalNo();
+                    else
+                    createSwalYes();
+                }
+            else
+            createSwalYes();
+              break;
+          break;
+          case 4:
+                if(lastChar=='7' || lastChar=='8'){
+                    if((timePicked<"09:30" && timePicked>="07:00") || (timePicked<"19:30" && timePicked>="16:00") )
+                        createSwalNo();
+                    else
+                    createSwalYes();
+                }
+            else
+            createSwalYes();
+              break;
+          break;
+          case 5:
+                if(lastChar=='9' || lastChar=='0'){
+                    if((timePicked<"09:30" && timePicked>="07:00") || (timePicked<"19:30" && timePicked>="16:00") )
+                        createSwalNo();
+                    else
+                    createSwalYes();
+                }
+            else
+            createSwalYes();
+              break;
           break;
         default:
-            createSwalNo();
+            createSwalYes();
       }
 
 }
